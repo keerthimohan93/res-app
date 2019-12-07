@@ -17,8 +17,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 200px 0 0 -100px;
-  color: #1889b6;
+  color: #aacfd0;
   font-size: 24px;
+  width: 100%;
 }
 </style>

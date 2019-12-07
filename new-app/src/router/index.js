@@ -8,7 +8,13 @@ import Others from "@/components/Others";
 import Experience from "@/components/Experience";
 import PageNotFound from "@/components/PageNotFound";
 
+import CONSTANTS from "@/constants.js";
+
 Vue.use(VueRouter);
+
+const checkMobileBrowser = () =>
+  navigator.userAgent.toLowerCase().includes(CONSTANTS.IPHONE) ||
+  navigator.userAgent.toLowerCase().includes(CONSTANTS.ANDROID);
 
 const routes = [
   {
@@ -53,10 +59,48 @@ const routes = [
   }
 ];
 
+const mobileRoutes = [
+  {
+    path: "/home",
+    name: "home",
+    component: Home
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: Contact
+  },
+  {
+    path: "/skills",
+    name: "skills",
+    component: Skills
+  },
+  {
+    path: "/education",
+    name: "education",
+    component: Education
+  },
+  {
+    path: "/others",
+    name: "others",
+    component: Others
+  },
+  {
+    path: "/experience",
+    name: "experience",
+    component: Experience
+  },
+  {
+    path: "/",
+    name: "home",
+    component: Home
+  }
+];
+
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes: checkMobileBrowser() ? mobileRoutes : routes
 });
 
 export default router;
