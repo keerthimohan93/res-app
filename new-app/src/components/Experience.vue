@@ -1,7 +1,12 @@
 <template>
   <div class="listing-container experience-container">
-    <div v-for="(item,index) in experienceData" v-bind:key="index">
-      <WorkCard :name="item.name" :year="item.year" :role="item.role" :clients="item.clients"/>
+    <div v-for="(item, index) in experienceData" v-bind:key="index">
+      <WorkCard
+        :name="item.name"
+        :year="item.year"
+        :role="item.role"
+        :clients="item.clients"
+      />
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="listing-container contact-container">
-    <Card :data="contactData"/>
+    <Card :data="contactData" />
   </div>
 </template>
 

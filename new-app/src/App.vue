@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <Header/>
-    <MainLayout/>
+    <Header />
+    <MainLayout />
   </div>
 </template>
 
@@ -20,4 +20,3 @@ export default {
 <style lang="scss">
 @import "@/styles/reset.scss";
 </style>
-

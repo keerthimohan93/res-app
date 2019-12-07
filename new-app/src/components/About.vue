@@ -1,10 +1,10 @@
 <template>
   <div class="listing-container about-container">
     <div class="about-card">
-      <Card :data="aboutData"/>
+      <Card :data="aboutData" />
     </div>
     <div class="about-profile">
-      <ProfilePhoto/>
+      <ProfilePhoto />
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="listing-container skills-container">
-    <Card :data="skillsData"/>
+    <Card :data="skillsData" />
   </div>
 </template>
 

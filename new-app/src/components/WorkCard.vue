@@ -13,7 +13,10 @@
     </p>
     <p class="work-clients">Clients:</p>
     <div v-if="clients.length > 0">
-      <div v-for="(clientItem,clientIndex) in clients" v-bind:key="clientIndex">
+      <div
+        v-for="(clientItem, clientIndex) in clients"
+        v-bind:key="clientIndex"
+      >
         <p>
           <span class="work-title">Name:</span>
           <span>{{ clientItem.name.toUpperCase() }}</span>
@@ -31,9 +34,12 @@
           <span>{{ clientItem.technologies }}</span>
         </p>
         <p class="work-title">Responsibilities:</p>
-        <ul v-for="(resp, respIndex) in clientItem.responsibilities" v-bind:key="respIndex">
+        <ul
+          v-for="(resp, respIndex) in clientItem.responsibilities"
+          v-bind:key="respIndex"
+        >
           <li class="work-responsibility">
-            <span>{{ respIndex+1 }}.</span>
+            <span>{{ respIndex + 1 }}.</span>
             {{ resp }}
           </li>
         </ul>

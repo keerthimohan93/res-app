@@ -1,6 +1,6 @@
 <template>
   <div class="listing-container education-container">
-    <Card :data="educationData"/>
+    <Card :data="educationData" />
   </div>
 </template>
 

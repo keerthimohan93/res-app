@@ -1,7 +1,7 @@
 <template>
   <div class="listing-container others-container">
-    <Card :data="accomplishMentsData"/>
-    <Card :data="referencesData"/>
+    <Card :data="accomplishMentsData" />
+    <Card :data="referencesData" />
   </div>
 </template>
 

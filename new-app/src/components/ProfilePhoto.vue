@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="profile-container">
-      <img :src="image" alt="profile picture">
+      <img :src="image" alt="profile picture" />
     </div>
   </div>
 </template>

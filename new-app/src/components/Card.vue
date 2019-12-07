@@ -3,13 +3,15 @@
     <div v-if="data.length > 0" class="card-container">
       <div v-for="(item, index) in data" v-bind:key="index">
         <div class="card-item" v-if="item.type !== 'link'">
-          <span class="card-item-title">{{item.key}}:</span>
-          <span class="card-item-val">{{item.value}}</span>
+          <span class="card-item-title">{{ item.key }}:</span>
+          <span class="card-item-val">{{ item.value }}</span>
         </div>
         <div class="card-item" v-if="item.type === 'link'">
-          <span class="card-item-title">{{item.key}}:</span>
+          <span class="card-item-title">{{ item.key }}:</span>
           <span class="card-item-val">
-            <a :href="item.value" rel="no-opener no-referrer" target="_blank">{{item.value}}</a>
+            <a :href="item.value" rel="no-opener no-referrer" target="_blank">{{
+              item.value
+            }}</a>
           </span>
         </div>
       </div>
