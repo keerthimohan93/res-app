@@ -130,7 +130,6 @@ export default new Vuex.Store({
   mutations: {
     [MUTATIONS.SET_HAMBURGER_STATUS]: function(state, payload) {
       state.hamburgerStatus = payload.value;
-      console.log(payload.value);
     }
   },
   actions: {
