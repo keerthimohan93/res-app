@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-container">
+  <div class="listing-container contact-container">
     <Card :data="contactData"/>
   </div>
 </template>
@@ -26,6 +26,14 @@ export default {
   animation: container-animation 0.6s ease;
   .card-container {
     width: 70%;
+  }
+}
+@media (min-width: 360px) and (max-width: 740px) {
+  .contact-container {
+    animation: none;
+    .card-container {
+      width: 90%;
+    }
   }
 }
 </style>

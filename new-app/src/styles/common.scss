@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes mobile-sidebar-animation {
+  from {
+    transform: translateX(-150%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 * ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 7px;
@@ -15,4 +24,8 @@
   border-radius: 4px;
   background-color: #969ba0;
   box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+body {
+  background-color: #f4f7f7;
 }

@@ -1,6 +1,8 @@
 <template>
   <div class="listing-container experience-container">
-    <WorkCard :data="experienceData"/>
+    <div v-for="(item,index) in experienceData" v-bind:key="index">
+      <WorkCard :name="item.name" :year="item.year" :role="item.role" :clients="item.clients"/>
+    </div>
   </div>
 </template>
 
@@ -26,6 +28,14 @@ export default {
   animation: container-animation 0.6s ease;
   .card-container {
     width: 70%;
+  }
+}
+@media (min-width: 360px) and (max-width: 740px) {
+  .experience-container {
+    animation: none;
+    .card-container {
+      width: 90%;
+    }
   }
 }
 </style>

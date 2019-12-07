@@ -1,5 +1,5 @@
 <template>
-  <div class="education-container">
+  <div class="listing-container education-container">
     <Card :data="educationData"/>
   </div>
 </template>
@@ -24,5 +24,16 @@ export default {
 <style lang="scss">
 .education-container {
   animation: container-animation 0.8s ease;
+  .card-container {
+    width: 80%;
+  }
+}
+@media (min-width: 360px) and (max-width: 740px) {
+  .education-container {
+    animation: none;
+    .card-container {
+      width: 90%;
+    }
+  }
 }
 </style>

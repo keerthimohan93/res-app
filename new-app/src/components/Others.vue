@@ -1,5 +1,5 @@
 <template>
-  <div class="others-container">
+  <div class="listing-container others-container">
     <Card :data="accomplishMentsData"/>
     <Card :data="referencesData"/>
   </div>
@@ -25,5 +25,17 @@ export default {
 <style lang="scss">
 .others-container {
   animation: container-animation 0.8s ease;
+  .card-container {
+    width: 70%;
+    margin: 50px;
+  }
+}
+@media (min-width: 360px) and (max-width: 740px) {
+  .others-container {
+    animation: none;
+    .card-container {
+      width: 70%;
+    }
+  }
 }
 </style>

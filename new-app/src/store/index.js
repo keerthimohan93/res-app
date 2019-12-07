@@ -1,5 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import ACTIONS from "@/actions.constants.js";
+import MUTATIONS from "@/mutations.constants.js";
 
 Vue.use(Vuex);
 
@@ -8,10 +10,15 @@ export default new Vuex.Store({
     aboutData: [{ key: "Name", value: "Keerthi Mohan" }],
     contactData: [
       { key: "Email", value: "keerthi.n.mohan@gmail.com" },
-      { key: "Github", value: "https://github.com/keerthimohan93" },
+      {
+        key: "Github",
+        value: "https://github.com/keerthimohan93",
+        type: "link"
+      },
       {
         key: "LinkedIn",
-        value: "https://in.linkedin.com/in/keerthi-mohan-uideveloper"
+        value: "https://in.linkedin.com/in/keerthi-mohan-uideveloper",
+        type: "link"
       }
     ],
     summary: {
@@ -21,7 +28,7 @@ export default new Vuex.Store({
         "3+ years of experience in front end web development.",
         "Experienced in JavaScript frameworks, responsive web design and user accessibility.",
         "Ability to provide solutions from a functional and technical perspective to meet deadlines.",
-        "Exposed to agile methods of development"
+        "Exposed to agile methods of development."
       ]
     },
     skillsData: [
@@ -65,7 +72,7 @@ export default new Vuex.Store({
       {
         id: 1,
         name: "Y Media Labs",
-        year: "2018-Present",
+        year: "2018 - Present",
         role: "Software Engineer",
         clients: [
           {
@@ -78,7 +85,7 @@ export default new Vuex.Store({
               "Involved in understanding the client requirements and developing various components as per the requirements.",
               "Developed UI for many components across the website.",
               "Unit Testing of all components by writing test cases.",
-              "Actively using GIT for version control"
+              "Actively using GIT for version control."
             ]
           }
         ]
@@ -86,7 +93,7 @@ export default new Vuex.Store({
       {
         id: 2,
         name: "Publicis Sapient",
-        year: "June 2016-October 2018",
+        year: "June 2016 - October 2018",
         role: "Associate Experience Technology",
         clients: [
           {
@@ -112,15 +119,25 @@ export default new Vuex.Store({
             technologies: "HTML5, jQuery, ReactJS, Redux",
             responsibilities: [
               "Developed UI for many components across the website.",
-              "Actively worked on production bug fixes"
+              "Actively worked on production bug fixes."
             ]
           }
         ]
       }
-    ]
+    ],
+    hamburgerStatus: false
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    [MUTATIONS.SET_HAMBURGER_STATUS]: function(state, payload) {
+      state.hamburgerStatus = payload.value;
+      console.log(payload.value);
+    }
+  },
+  actions: {
+    [ACTIONS.SET_MENU_STATUS]({ commit }, payload) {
+      commit(MUTATIONS.SET_HAMBURGER_STATUS, payload);
+    }
+  },
   modules: {},
   getters: {
     aboutData: state => {
@@ -146,6 +163,9 @@ export default new Vuex.Store({
     },
     experienceData: state => {
       return state.experienceData;
+    },
+    getHambugerStatus: state => {
+      return state.hamburgerStatus;
     }
   }
 });

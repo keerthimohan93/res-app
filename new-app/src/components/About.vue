@@ -1,7 +1,9 @@
 <template>
-  <div class="about-container">
-    <Card :data="aboutData"/>
-    <div class="item-container">
+  <div class="listing-container about-container">
+    <div class="about-card">
+      <Card :data="aboutData"/>
+    </div>
+    <div class="about-profile">
       <ProfilePhoto/>
     </div>
   </div>
@@ -29,12 +31,23 @@ export default {
   animation: container-animation 0.6s ease;
   display: flex;
   padding: 140px 0 0 30%;
-  .listing-container {
-    padding: 0;
+  .about-card,
+  .about-profile {
     width: 50%;
+    .card-container {
+      width: 70%;
+    }
+    .profile-container {
+      width: 80%;
+    }
   }
-  .item-container {
-    width: 40%;
+}
+@media (min-width: 360px) and (max-width: 740px) {
+  .about-container {
+    animation: none;
+    .card-container {
+      width: 90%;
+    }
   }
 }
 </style>
