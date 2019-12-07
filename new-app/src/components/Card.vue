@@ -9,9 +9,11 @@
         <div class="card-item" v-if="item.type === 'link'">
           <span class="card-item-title">{{ item.key }}:</span>
           <span class="card-item-val">
-            <a :href="item.value" rel="no-opener no-referrer" target="_blank">{{
+            <a :href="item.value" rel="no-opener no-referrer" target="_blank">
+              {{
               item.value
-            }}</a>
+              }}
+            </a>
           </span>
         </div>
       </div>
@@ -39,6 +41,9 @@ export default {
   .card-item {
     font-size: 16px;
     padding: 20px 0;
+  }
+  .card-item-val {
+    word-wrap: break-word;
   }
   .card-item-title {
     color: #79a8a9;

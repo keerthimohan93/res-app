@@ -61,6 +61,11 @@ const routes = [
 
 const mobileRoutes = [
   {
+    path: "/",
+    name: "home",
+    component: Home
+  },
+  {
     path: "/home",
     name: "home",
     component: Home
@@ -89,11 +94,6 @@ const mobileRoutes = [
     path: "/experience",
     name: "experience",
     component: Experience
-  },
-  {
-    path: "/",
-    name: "home",
-    component: Home
   }
 ];
 
