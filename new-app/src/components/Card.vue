@@ -10,9 +10,7 @@
           <span class="card-item-title">{{ item.key }}:</span>
           <span class="card-item-val">
             <a :href="item.value" rel="no-opener no-referrer" target="_blank">
-              {{
-              item.value
-              }}
+              {{ item.value }}
             </a>
           </span>
         </div>

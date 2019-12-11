@@ -2,7 +2,11 @@
   <div class="listing-container home-container">
     <p>{{ homeSummary.briefText }}</p>
     <ul class="pointers">
-      <li class="pointer-item" v-for="(item, index) in homeSummary.pointers" v-bind:key="index">
+      <li
+        class="pointer-item"
+        v-for="(item, index) in homeSummary.pointers"
+        v-bind:key="index"
+      >
         <span class="pointer-index">{{ index + 1 }}.</span>
         {{ item }}
       </li>

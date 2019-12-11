@@ -2,12 +2,12 @@
   <div>
     <div class="header-container">
       <div class="hamburger-menu">
-        <img :src="image" alt="hamburger icon" v-on:click="handleMenuClick">
+        <img :src="image" alt="hamburger icon" v-on:click="handleMenuClick" />
       </div>
       <h2>KEERTHI MOHAN</h2>
     </div>
     <div v-if="getLoggedInStatusMethod()">
-      <NavHeader/>
+      <NavHeader />
     </div>
   </div>
 </template>

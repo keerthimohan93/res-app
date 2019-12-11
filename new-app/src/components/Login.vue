@@ -4,16 +4,25 @@
       v-if="success"
       class="success-msg msg-animation"
       v-on:animationend="handleAnimationEnd"
-    >Signed up successfully!</p>
+    >
+      Signed up successfully!
+    </p>
     <p
       v-if="error"
       class="error-msg msg-animation"
       v-on:animationend="handleAnimationEnd"
-    >Sign up failed.</p>
+    >
+      Sign up failed.
+    </p>
     <h2 v-if="!signup">Sign In</h2>
     <h2 v-if="signup">Sign Up</h2>
     <div>
-      <input placeholder="Email" type="email" class="login-input" v-on:change="handleEmailChange">
+      <input
+        placeholder="Email"
+        type="email"
+        class="login-input"
+        v-on:change="handleEmailChange"
+      />
     </div>
     <div>
       <input
@@ -21,9 +30,11 @@
         type="password"
         class="login-input"
         v-on:change="handlePasswordChange"
-      >
+      />
     </div>
-    <button class="log-in-btn" v-if="signup" v-on:click="handleSignUpFunc">Sign Up</button>
+    <button class="log-in-btn" v-if="signup" v-on:click="handleSignUpFunc">
+      Sign Up
+    </button>
     <div v-if="!signup">
       <button class="log-in-btn" @click="handleLoginFunc">Log In</button>
       <div class="or-container">-- OR --</div>
@@ -33,9 +44,9 @@
           v-on:click="handleGoogleSignin"
           alt="google sign in"
           class="google-sign-in"
-        >
+        />
       </div>
-      <div v-if="errorMsg !== ''" class="login-error-msg">{{errorMsg}}</div>
+      <div v-if="errorMsg !== ''" class="login-error-msg">{{ errorMsg }}</div>
       <p class="sign-up-text">
         Don't have an account?
         <span class="sign-up" v-on:click="handleSignUp">Sign Up!</span>
