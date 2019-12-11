@@ -13,10 +13,7 @@
     </p>
     <p class="work-clients">Clients:</p>
     <div v-if="clients.length > 0">
-      <div
-        v-for="(clientItem, clientIndex) in clients"
-        v-bind:key="clientIndex"
-      >
+      <div v-for="(clientItem, clientIndex) in clients" v-bind:key="clientIndex">
         <p>
           <span class="work-title">Name:</span>
           <span>{{ clientItem.name.toUpperCase() }}</span>
@@ -34,10 +31,7 @@
           <span>{{ clientItem.technologies }}</span>
         </p>
         <p class="work-title">Responsibilities:</p>
-        <ul
-          v-for="(resp, respIndex) in clientItem.responsibilities"
-          v-bind:key="respIndex"
-        >
+        <ul v-for="(resp, respIndex) in clientItem.responsibilities" v-bind:key="respIndex">
           <li class="work-responsibility">
             <span>{{ respIndex + 1 }}.</span>
             {{ resp }}
@@ -56,16 +50,17 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/styles/variables.scss";
 .workcard-container {
-  border: 1px solid #addef1;
+  border: 1px solid $nav-header;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.14);
   margin: 20px 20px 50px 20px;
   line-height: 20px;
   .work-name {
-    border-bottom: 2px solid #79a8a9;
-    color: #79a8a9;
+    border-bottom: 2px solid $title;
+    color: $title;
     font-weight: bold;
     height: 30px;
     line-height: 1px;
@@ -83,7 +78,7 @@ export default {
     margin: 10px 0;
   }
   .work-clients {
-    color: #79a8a9;
+    color: $title;
     font-weight: bold;
     font-size: 16px;
   }

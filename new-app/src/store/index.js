@@ -125,16 +125,23 @@ export default new Vuex.Store({
         ]
       }
     ],
-    hamburgerStatus: false
+    hamburgerStatus: false,
+    loggedIn: false
   },
   mutations: {
     [MUTATIONS.SET_HAMBURGER_STATUS]: function(state, payload) {
       state.hamburgerStatus = payload.value;
+    },
+    [MUTATIONS.LOGGED_IN]: function(state, payload) {
+      state.loggedIn = payload.value;
     }
   },
   actions: {
     [ACTIONS.SET_MENU_STATUS]({ commit }, payload) {
       commit(MUTATIONS.SET_HAMBURGER_STATUS, payload);
+    },
+    [ACTIONS.SET_LOGGED_IN_STATUS]({ commit }, payload) {
+      commit(MUTATIONS.LOGGED_IN, payload);
     }
   },
   modules: {},
@@ -165,6 +172,9 @@ export default new Vuex.Store({
     },
     getHambugerStatus: state => {
       return state.hamburgerStatus;
+    },
+    getLoggedInStatus: state => {
+      return state.loggedIn;
     }
   }
 });

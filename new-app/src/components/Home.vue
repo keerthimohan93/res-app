@@ -2,11 +2,7 @@
   <div class="listing-container home-container">
     <p>{{ homeSummary.briefText }}</p>
     <ul class="pointers">
-      <li
-        class="pointer-item"
-        v-for="(item, index) in homeSummary.pointers"
-        v-bind:key="index"
-      >
+      <li class="pointer-item" v-for="(item, index) in homeSummary.pointers" v-bind:key="index">
         <span class="pointer-index">{{ index + 1 }}.</span>
         {{ item }}
       </li>
@@ -25,10 +21,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/styles/variables.scss";
 .pointer-item {
   padding: 10px;
   font-weight: bold;
-  color: #79a8a9;
+  color: $title;
   &:first-child {
     margin-top: 20px;
   }
@@ -36,7 +33,7 @@ export default {
 .pointer-index {
   padding-right: 5px;
   font-weight: bold;
-  color: #79a8a9;
+  color: $title;
 }
 .home-container {
   p {

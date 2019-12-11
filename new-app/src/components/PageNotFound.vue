@@ -12,12 +12,13 @@ export default {
 };
 </script>
 
-<style style="scss">
+<style lang="scss">
+@import "@/styles/variables.scss";
 .page-not-found-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aacfd0;
+  color: $nav-header;
   font-size: 24px;
   width: 100%;
 }

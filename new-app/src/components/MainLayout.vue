@@ -1,17 +1,22 @@
 <template>
   <div class="main-layout-container">
+    <Header/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
 export default {
-  name: "MainLayout"
+  name: "MainLayout",
+  components: {
+    Header
+  }
 };
 </script>
 
 <style lang="scss">
-@import "@/styles/common.scss";
+@import "@/styles/variables.scss";
 .listing-container {
   padding: 140px;
   padding-left: 30%;

@@ -1,22 +1,17 @@
 <template>
   <div class="container">
-    <Header />
-    <MainLayout />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
-import MainLayout from "@/components/MainLayout.vue";
 export default {
-  name: "App",
-  components: {
-    Header,
-    MainLayout
-  }
+  name: "App"
 };
 </script>
 
 <style lang="scss">
 @import "@/styles/reset.scss";
+@import "@/styles/common.scss";
+@import "@/styles/variables.scss";
 </style>

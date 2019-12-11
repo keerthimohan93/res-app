@@ -2,19 +2,22 @@
   <div>
     <div class="header-container">
       <div class="hamburger-menu">
-        <img :src="image" alt="hamburger icon" v-on:click="handleMenuClick" />
+        <img :src="image" alt="hamburger icon" v-on:click="handleMenuClick">
       </div>
       <h2>KEERTHI MOHAN</h2>
     </div>
-    <NavHeader />
+    <div v-if="getLoggedInStatusMethod()">
+      <NavHeader/>
+    </div>
   </div>
 </template>
 
 <script>
-import NavHeader from "@/components/NavHeader.vue";
 import hamburgerIcon from "@/assets/hamburger.png";
+import NavHeader from "@/components/NavHeader.vue";
 import { mapGetters } from "vuex";
 import ACTIONS from "@/actions.constants.js";
+import currentSession from "@/authService.js";
 export default {
   name: "Header",
   components: {
@@ -26,7 +29,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getHambugerStatus"])
+    ...mapGetters(["getHambugerStatus", "getLoggedInStatus"])
   },
   methods: {
     handleMenuClick: function() {
@@ -34,12 +37,19 @@ export default {
       this.$store.dispatch(ACTIONS.SET_MENU_STATUS, {
         value: !clickStatus
       });
+    },
+    getLoggedInStatusMethod: function() {
+      return currentSession() || this.getLoggedInStatus;
     }
+  },
+  watch: {
+    currentSession: Function
   }
 };
 </script>
 
 <style lang="scss">
+@import "@/styles/variables.scss";
 .header-container {
   display: flex;
   align-items: center;
@@ -48,9 +58,9 @@ export default {
   width: 100%;
   z-index: 100;
   height: 75px;
-  background: #1f4e5f;
+  background: $header;
   h2 {
-    color: white;
+    color: $white;
     font-size: 30px;
     margin: 0 auto;
   }

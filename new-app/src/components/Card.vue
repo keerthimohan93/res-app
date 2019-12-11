@@ -31,10 +31,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/styles/variables.scss";
 .card-container {
   width: 40%;
   height: auto;
-  border: 1px solid #addef1;
+  border: 1px solid $title;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.14);
@@ -46,7 +47,7 @@ export default {
     word-wrap: break-word;
   }
   .card-item-title {
-    color: #79a8a9;
+    color: $title;
     font-weight: bold;
     padding: 0 10px;
   }
