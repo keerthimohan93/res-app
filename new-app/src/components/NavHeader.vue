@@ -129,7 +129,7 @@ export default {
     }
     .nav-item {
       color: $black;
-      margin: 50px 0;
+      margin: 35px 0;
       cursor: pointer;
       font-size: 18px;
       font-weight: bold;
