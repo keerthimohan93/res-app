@@ -16,7 +16,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/styles/variables.scss";
 .listing-container {
   padding: 140px;
   padding-left: 30%;
