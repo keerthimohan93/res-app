@@ -126,11 +126,14 @@ export default {
       font-size: 18px;
       font-weight: bold;
       text-align: center;
-      .nav-item {
-        color: $black;
-        margin: 40px 0;
-        cursor: pointer;
-      }
+    }
+    .nav-item {
+      color: $black;
+      margin: 50px 0;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
     }
   }
 }
