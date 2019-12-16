@@ -8,6 +8,7 @@ import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Home from "@/components/Home";
+import MyWork from "@/components/MyWork";
 import firebase from "firebase";
 
 Vue.use(VueRouter);
@@ -61,6 +62,11 @@ const routes = [
         path: "/contact",
         name: "contact",
         component: Contact
+      },
+      {
+        path: "/mywork",
+        name: "mywork",
+        component: MyWork
       }
     ]
   },

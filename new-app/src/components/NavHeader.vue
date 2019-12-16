@@ -15,6 +15,9 @@
           <router-link to="/experience">Experience</router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/mywork">My Work</router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/contact">Contact</router-link>
         </li>
         <li class="nav-item">
@@ -36,6 +39,9 @@
         </li>
         <li class="nav-item">
           <router-link to="/experience">Experience</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/mywork">My Work</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/contact">Contact</router-link>

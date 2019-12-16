@@ -4,37 +4,54 @@
       v-if="success"
       class="success-msg msg-animation"
       v-on:animationend="handleAnimationEnd"
-    >
-      Signed up successfully!
-    </p>
+    >Signed up successfully!</p>
     <p
       v-if="error"
       class="error-msg msg-animation"
       v-on:animationend="handleAnimationEnd"
-    >
-      Sign up failed.
-    </p>
-    <h2 v-if="!signup">Sign In</h2>
-    <h2 v-if="signup">Sign Up</h2>
-    <div>
-      <input
-        placeholder="Email"
-        type="email"
-        class="login-input"
-        v-on:change="handleEmailChange"
-      />
+    >Sign up failed.</p>
+    <div v-if="!signup">
+      <h2>Sign In</h2>
+      <div>
+        <input
+          placeholder="Email"
+          type="email"
+          class="login-input"
+          v-on:change="handleEmailChange"
+          :value="emailSignup"
+        >
+      </div>
+      <div>
+        <input
+          placeholder="Password"
+          type="password"
+          class="login-input"
+          v-on:change="handlePasswordChange"
+          :value="passwordSignup"
+        >
+      </div>
     </div>
-    <div>
-      <input
-        placeholder="Password"
-        type="password"
-        class="login-input"
-        v-on:change="handlePasswordChange"
-      />
+    <div v-if="signup">
+      <h2>Sign Up</h2>
+      <div>
+        <input
+          placeholder="Email"
+          type="email"
+          class="login-input"
+          v-on:change="handleEmailSignupChange"
+        >
+      </div>
+      <div>
+        <input
+          placeholder="Password"
+          type="password"
+          class="login-input"
+          v-on:change="handlePasswordSignupChange"
+        >
+      </div>
     </div>
-    <button class="log-in-btn" v-if="signup" v-on:click="handleSignUpFunc">
-      Sign Up
-    </button>
+
+    <button class="log-in-btn" v-if="signup && !hideSignUp" v-on:click="handleSignUpFunc">Sign Up</button>
     <div v-if="!signup">
       <button class="log-in-btn" @click="handleLoginFunc">Log In</button>
       <div class="or-container">-- OR --</div>
@@ -44,7 +61,7 @@
           v-on:click="handleGoogleSignin"
           alt="google sign in"
           class="google-sign-in"
-        />
+        >
       </div>
       <div v-if="errorMsg !== ''" class="login-error-msg">{{ errorMsg }}</div>
       <p class="sign-up-text">
@@ -72,7 +89,10 @@ export default {
       email: "",
       password: "",
       success: false,
-      error: false
+      error: false,
+      emailSignup: "",
+      passwordSignup: "",
+      hideSignUp: false
     };
   },
   name: "Login",
@@ -98,28 +118,45 @@ export default {
     },
     handleLogin: function() {
       this.signup = false;
-      this.email = "";
-      this.password = "";
+      this.emailSignup = "";
+      this.passwordSignup = "";
     },
     handleSignUpFunc: function() {
       this.success = false;
       this.error = false;
+      const actionCodeSettings = {
+        url: "keerthimohan@netlify.com/login"
+      };
       firebase
         .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
+        .createUserWithEmailAndPassword(this.emailSignup, this.passwordSignup)
         .then(() => {
           this.success = true;
-          this.signup = false;
           this.email = "";
           this.password = "";
+          firebase
+            .auth()
+            .sendSignInLinkToEmail(this.emailSignup, actionCodeSettings)
+            .then(function() {
+              // console.log("im here");
+              this.hideSignUp = true;
+              this.signup = false;
+            })
+            .catch(() => {});
         })
         .catch(() => {});
     },
     handleEmailChange: function(e) {
       this.email = e.target.value;
     },
+    handleEmailSignupChange: function(e) {
+      this.emailSignup = e.target.value;
+    },
     handlePasswordChange: function(e) {
       this.password = e.target.value;
+    },
+    handlePasswordSignupChange: function(e) {
+      this.passwordSignup = e.target.value;
     },
     handleLoginFunc: function() {
       this.success = false;
@@ -217,6 +254,9 @@ export default {
     margin: 20px;
     font-size: 20px;
     font-weight: bold;
+  }
+  .sign-up-text {
+    display: none;
   }
 }
 @media (min-width: 360px) and (max-width: 740px) {
