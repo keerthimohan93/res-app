@@ -45,7 +45,7 @@ export default {
     word-wrap: break-word;
   }
   .card-item-title {
-    color: $title;
+    color: $header;
     font-weight: bold;
     padding: 0 10px;
   }

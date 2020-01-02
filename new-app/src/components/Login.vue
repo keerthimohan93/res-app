@@ -4,14 +4,18 @@
       v-if="success"
       class="success-msg msg-animation"
       v-on:animationend="handleAnimationEnd"
-    >Signed up successfully!</p>
+    >
+      Signed up successfully!
+    </p>
     <p
       v-if="error"
       class="error-msg msg-animation"
       v-on:animationend="handleAnimationEnd"
-    >Sign up failed.</p>
+    >
+      Sign up failed.
+    </p>
     <div v-if="!signup">
-      <h2>Sign In</h2>
+      <h2>Welcome</h2>
       <div>
         <input
           placeholder="Email"
@@ -19,7 +23,7 @@
           class="login-input"
           v-on:change="handleEmailChange"
           :value="emailSignup"
-        >
+        />
       </div>
       <div>
         <input
@@ -28,7 +32,8 @@
           class="login-input"
           v-on:change="handlePasswordChange"
           :value="passwordSignup"
-        >
+          v-on:keypress="handleLoginKeypress"
+        />
       </div>
     </div>
     <div v-if="signup">
@@ -39,7 +44,7 @@
           type="email"
           class="login-input"
           v-on:change="handleEmailSignupChange"
-        >
+        />
       </div>
       <div>
         <input
@@ -47,11 +52,17 @@
           type="password"
           class="login-input"
           v-on:change="handlePasswordSignupChange"
-        >
+        />
       </div>
     </div>
 
-    <button class="log-in-btn" v-if="signup && !hideSignUp" v-on:click="handleSignUpFunc">Sign Up</button>
+    <button
+      class="log-in-btn"
+      v-if="signup && !hideSignUp"
+      v-on:click="handleSignUpFunc"
+    >
+      Sign Up
+    </button>
     <div v-if="!signup">
       <button class="log-in-btn" @click="handleLoginFunc">Log In</button>
       <div class="or-container">-- OR --</div>
@@ -61,7 +72,7 @@
           v-on:click="handleGoogleSignin"
           alt="google sign in"
           class="google-sign-in"
-        >
+        />
       </div>
       <div v-if="errorMsg !== ''" class="login-error-msg">{{ errorMsg }}</div>
       <p class="sign-up-text">
@@ -79,7 +90,7 @@
 <script>
 import firebase from "firebase";
 import ACTIONS from "@/actions.constants.js";
-import googleImage from "@/assets/btn_google_signin_light_pressed_web.png";
+import googleImage from "@/assets/images/btn_google_signin_light_pressed_web.png";
 export default {
   data() {
     return {
@@ -96,6 +107,11 @@ export default {
     };
   },
   name: "Login",
+  mounted() {
+    document
+      .querySelector(".container")
+      .classList.remove("remove-body-default");
+  },
   methods: {
     handleGoogleSignin: function() {
       const provider = new firebase.auth.GoogleAuthProvider();
@@ -175,6 +191,20 @@ export default {
     handleAnimationEnd: function() {
       this.error = false;
       this.success = false;
+    },
+    handleLoginKeypress: function(e) {
+      if (e.keyCode === 13) {
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, e.target.value)
+          .then(() => {
+            this.errorMsg = "";
+            this.$router.replace("/home/summary");
+          })
+          .catch(err => {
+            this.errorMsg = err.message;
+          });
+      }
     }
   }
 };
@@ -186,11 +216,12 @@ export default {
   text-align: center;
   position: fixed;
   top: 30%;
-  left: 35%;
+  position: relative;
+  z-index: 2;
+  color: $white;
   h2 {
-    color: $header;
-    font-weight: bold;
-    font-size: 20px;
+    color: $white;
+    font-size: 28px;
   }
   .login-input {
     background: transparent;
@@ -201,6 +232,8 @@ export default {
     margin: 20px;
     box-sizing: border-box;
     outline: none;
+    color: $white;
+    font-size: 16px;
   }
   .log-in-btn {
     width: auto;

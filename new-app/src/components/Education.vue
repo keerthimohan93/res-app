@@ -23,7 +23,6 @@ export default {
 
 <style lang="scss">
 .education-container {
-  animation: container-animation 0.8s ease;
   .card-container {
     width: 80%;
   }

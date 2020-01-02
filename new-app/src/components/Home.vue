@@ -1,13 +1,14 @@
 <template>
   <div class="listing-container home-container">
     <p>{{ homeSummary.briefText }}</p>
+    <p>{{ homeSummary.introText }}</p>
+    <p class="intro-summary">{{ homeSummary.introSummary }}</p>
     <ul class="pointers">
       <li
         class="pointer-item"
         v-for="(item, index) in homeSummary.pointers"
         v-bind:key="index"
       >
-        <span class="pointer-index">{{ index + 1 }}.</span>
         {{ item }}
       </li>
     </ul>
@@ -41,8 +42,26 @@ export default {
 }
 .home-container {
   p {
-    line-height: 25px;
+    line-height: 70px;
     font-weight: bold;
+    font-size: 60px;
+    color: $header;
+  }
+  .intro-summary {
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+@media (min-width: 340px) and (max-width: 740px) {
+  .home-container {
+    p {
+      font-size: 30px;
+      line-height: 40px;
+    }
+    .intro-summary {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 }
 </style>

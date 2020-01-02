@@ -20,7 +20,6 @@ export default {
 
 <style lang="scss">
 .skills-container {
-  animation: container-animation 0.6s ease;
   .card-container {
     width: 85%;
   }

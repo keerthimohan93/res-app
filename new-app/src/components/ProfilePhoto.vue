@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ProfileImage from "@/assets/Profile_pic.jpg";
+import ProfileImage from "@/assets/images/profile.svg";
 export default {
   name: "ProfilePhoto",
   data: () => {
@@ -21,8 +21,8 @@ export default {
 <style lang="scss">
 .profile-container {
   img {
-    width: inherit;
-    height: 70vh;
+    width: 100%;
+    height: inherit;
   }
 }
 </style>

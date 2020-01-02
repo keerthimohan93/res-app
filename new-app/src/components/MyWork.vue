@@ -3,38 +3,39 @@
     <div class="my-work-container">
       <div class="my-work-video-container">
         <h2>QUIZZY</h2>
-        <p>A simple quiz application having various interesting topics to choose from.</p>
         <p>
-          <span>Tech Stack Used:</span>Vue, VueX, Bulma CSS
+          A simple quiz application having various interesting topics to choose
+          from.
         </p>
+        <p><span>Tech Stack Used:</span>Vue, VueX, Bulma CSS</p>
         <p>
           <span>URL:</span>
           <a
             href="https://quizzy.netlify.com"
             rel="no-opener no-referer"
             target="_blank"
-          >https://quizzy.netlify.com</a>
+            >https://quizzy.netlify.com</a
+          >
         </p>
         <video class="work-grid" autoplay loop playinline>
-          <source :src="quizzy" type="video/webm">
+          <source :src="quizzy" type="video/webm" />
         </video>
       </div>
       <div class="my-work-video-container">
         <h2>CHAT APP</h2>
         <p>A simple chat application</p>
-        <p>
-          <span>Tech Stack Used:</span>SOCKET IO, HTML, JAVASCRIPT
-        </p>
+        <p><span>Tech Stack Used:</span>SOCKET IO, HTML, JAVASCRIPT</p>
         <p>
           <span>URL:</span>
           <a
             href="https://simple-chatapp-socket.herokuapp.com"
             rel="no-opener no-referer"
             target="_blank"
-          >https://simple-chatapp-socket.herokuapp.com</a>
+            >https://simple-chatapp-socket.herokuapp.com</a
+          >
         </p>
         <video class="work-grid" autoplay loop playinline>
-          <source :src="chat" type="video/webm">
+          <source :src="chat" type="video/webm" />
         </video>
       </div>
     </div>
@@ -69,7 +70,7 @@ export default {
       text-align: center;
     }
     h2 {
-      color: $title;
+      color: $header;
       font-size: 18px;
       font-weight: bold;
       margin: 20px 0 0 0;

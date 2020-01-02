@@ -6,3 +6,45 @@ $white: #fff;
 $nav-header: #aacfd0;
 $black: #000;
 $title: #79a8a9;
+$background-green: #50a3a2;
+$background: #f4f7f7;
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200, 300');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $white;
+  font-weight: 300;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $white;
+  opacity: 1;
+  font-weight: 300;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $white;
+  opacity: 1;
+  font-weight: 300;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $white;
+  font-weight: 300;
+}

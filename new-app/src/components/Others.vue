@@ -24,7 +24,6 @@ export default {
 
 <style lang="scss">
 .others-container {
-  animation: container-animation 0.8s ease;
   .card-container {
     width: 70%;
     margin: 50px;

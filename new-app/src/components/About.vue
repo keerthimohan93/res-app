@@ -28,7 +28,6 @@ export default {
 
 <style lang="scss">
 .about-container {
-  animation: container-animation 0.6s ease;
   display: flex;
   padding: 140px 0 0 30%;
   .about-card,

@@ -66,7 +66,7 @@ export default {
   line-height: 20px;
   .work-name {
     border-bottom: 2px solid $title;
-    color: $title;
+    color: $header;
     font-weight: bold;
     height: 30px;
     line-height: 1px;

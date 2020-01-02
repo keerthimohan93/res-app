@@ -23,7 +23,6 @@ export default {
 
 <style lang="scss">
 .contact-container {
-  animation: container-animation 0.6s ease;
   .card-container {
     width: 70%;
   }

@@ -24,7 +24,7 @@
           <router-link to="/others">Others</router-link>
         </li>
       </ul>
-      <div class="nav-item" v-on:click="handleSignOut">Logout</div>
+      <div class="nav-item" v-on:click="handleSignOut">Log Out</div>
     </div>
     <div class="mob-nav-container" v-if="getHambugerStatus">
       <ul class="nav-list" v-on:click="handleMenuClick">
@@ -50,7 +50,7 @@
           <router-link to="/others">Others</router-link>
         </li>
       </ul>
-      <div class="nav-item" v-on:click="handleSignOut">Logout</div>
+      <div class="nav-item" v-on:click="handleSignOut">Log Out</div>
     </div>
   </div>
 </template>
@@ -89,9 +89,9 @@ export default {
 @import "@/styles/variables.scss";
 .nav-container {
   background-color: $nav-header;
-  width: 20%;
+  width: 10%;
   position: fixed;
-  top: 75px;
+  top: 0;
   left: 0;
   z-index: 100;
   height: 100%;
@@ -102,12 +102,15 @@ export default {
     text-align: center;
   }
   .nav-item {
-    color: $black;
-    margin: 50px 0;
+    color: $header;
+    margin: 60px 0;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
+    a {
+      color: $header;
+    }
   }
 }
 .mob-nav-container {
@@ -122,7 +125,7 @@ export default {
     background-color: $nav-header;
     width: 40%;
     position: fixed;
-    top: 75px;
+    top: 50px;
     left: 0;
     z-index: 100;
     height: 100%;
@@ -134,12 +137,15 @@ export default {
       text-align: center;
     }
     .nav-item {
-      color: $black;
+      color: $header;
       margin: 35px 0;
       cursor: pointer;
       font-size: 18px;
       font-weight: bold;
       text-align: center;
+      a {
+        color: $header;
+      }
     }
   }
 }

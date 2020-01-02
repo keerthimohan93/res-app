@@ -4,7 +4,6 @@
       <div class="hamburger-menu">
         <img :src="image" alt="hamburger icon" v-on:click="handleMenuClick" />
       </div>
-      <h2>KEERTHI MOHAN</h2>
     </div>
     <div v-if="getLoggedInStatusMethod()">
       <NavHeader />
@@ -13,7 +12,7 @@
 </template>
 
 <script>
-import hamburgerIcon from "@/assets/hamburger.png";
+import hamburgerIcon from "@/assets/images/hamburger-white.svg";
 import NavHeader from "@/components/NavHeader.vue";
 import { mapGetters } from "vuex";
 import ACTIONS from "@/actions.constants.js";
@@ -55,10 +54,11 @@ export default {
   align-items: center;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 0;
   z-index: 100;
-  height: 75px;
-  background: $header;
+  height: 50px;
+  background: $nav-header;
+  width: 8%;
   h2 {
     color: $white;
     font-size: 30px;
@@ -75,7 +75,17 @@ export default {
     height: 50px;
   }
 }
-@media (min-width: 360px) and (max-width: 740px) {
+.profile-icon {
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (min-width: 340px) and (max-width: 740px) {
+  .header-container {
+    width: 100%;
+    background: $header;
+  }
   .hamburger-menu {
     display: block;
     cursor: pointer;

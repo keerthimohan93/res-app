@@ -22,14 +22,10 @@ export default new Vuex.Store({
       }
     ],
     summary: {
-      briefText:
-        "A self-motivated web developer with a flair for creating elegant solutions by having the knowledge and proficiency in JavaScript, HTML, CSS and mobile responsive web development as well as skills and ability in writing clean and efficient code.",
-      pointers: [
-        "3+ years of experience in front end web development.",
-        "Experienced in JavaScript frameworks, responsive web design and user accessibility.",
-        "Ability to provide solutions from a functional and technical perspective to meet deadlines.",
-        "Exposed to agile methods of development."
-      ]
+      briefText: "Hi,",
+      introText: "this is Keerthi Mohan!",
+      introSummary:
+        "A self-motivated web developer with a flair for creating elegant solutions by having the knowledge and proficiency in JavaScript, HTML, CSS and mobile responsive web development as well as skills and ability in writing clean and efficient code. 3+ years of experience in front end web development. Experienced in JavaScript frameworks, responsive web design and user accessibility. Ability to provide solutions from a functional and technical perspective to meet deadlines. Also, exposed to agile methods of development."
     },
     skillsData: [
       { key: "Programming Languages", value: "HTML5, CSS3, JavaScript" },
