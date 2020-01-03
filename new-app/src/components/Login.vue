@@ -23,6 +23,7 @@
           class="login-input"
           v-on:change="handleEmailChange"
           :value="emailSignup"
+          v-on:touch="handleEmailChange"
         />
       </div>
       <div>
@@ -32,7 +33,7 @@
           class="login-input"
           v-on:change="handlePasswordChange"
           :value="passwordSignup"
-          v-on:keypress="handleLoginKeypress"
+          v-on:touch="handlePasswordChange"
         />
       </div>
     </div>
@@ -297,7 +298,10 @@ export default {
     margin-top: 30%;
     left: 0;
     top: 0;
-    position: static;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: $white;
 
     .login-input {
       width: 200px;
