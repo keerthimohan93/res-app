@@ -24,7 +24,7 @@
           <router-link to="/others">Others</router-link>
         </li>
       </ul>
-      <div class="nav-item" v-on:click="handleSignOut">Log Out</div>
+      <div class="nav-item logout" v-on:click="handleSignOut">Log Out</div>
     </div>
     <div class="mob-nav-container" v-if="getHambugerStatus">
       <ul class="nav-list" v-on:click="handleMenuClick">
@@ -50,7 +50,7 @@
           <router-link to="/others">Others</router-link>
         </li>
       </ul>
-      <div class="nav-item" v-on:click="handleSignOut">Log Out</div>
+      <div class="nav-item logout" v-on:click="handleSignOut">Log Out</div>
     </div>
   </div>
 </template>
@@ -111,6 +111,9 @@ export default {
     a {
       color: $header;
     }
+    &.logout {
+      color: $red;
+    }
   }
 }
 .mob-nav-container {
@@ -145,6 +148,9 @@ export default {
       text-align: center;
       a {
         color: $header;
+      }
+      &.logout {
+        color: $red;
       }
     }
   }
